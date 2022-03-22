@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @EntityScan(basePackages = "com.bootcamp.clients")
 @SpringBootApplication(scanBasePackages = "com.bootcamp.clients")
-@EnableDiscoveryClient
+@EnableEurekaClient
 public class MsClientsApplication {
 
     public static void main(String[] args) {

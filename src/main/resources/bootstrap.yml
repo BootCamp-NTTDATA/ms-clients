@@ -3,9 +3,5 @@ spring:
         name: ms-clients
     cloud:
         config:
-            uri: http://192.168.88.26:8888
-
-eureka:
-    client:
-        serviceUrl:
-            defaultZone: http://192.168.88.26:8761/eureka/
+            enabled: true
+            uri: http://localhost:8090
