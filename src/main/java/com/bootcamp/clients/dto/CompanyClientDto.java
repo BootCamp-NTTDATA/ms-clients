@@ -15,6 +15,5 @@ public class CompanyClientDto {
     private String address;
     private String phone;
     private String email;
-    private String ruc;
     private String tradeName;
 }
