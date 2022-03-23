@@ -1,7 +1,6 @@
 package com.bootcamp.clients.resource;
 
 import com.bootcamp.clients.dto.PersonClientDto;
-import com.bootcamp.clients.entity.DocumentType;
 import com.bootcamp.clients.entity.PersonClient;
 import com.bootcamp.clients.service.IPersonClientService;
 import com.bootcamp.clients.util.MapperUtil;

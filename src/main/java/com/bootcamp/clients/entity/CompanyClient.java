@@ -8,6 +8,5 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Setter
 @Document
 public class CompanyClient extends Person{
-    private String ruc;
     private String tradeName;
 }
