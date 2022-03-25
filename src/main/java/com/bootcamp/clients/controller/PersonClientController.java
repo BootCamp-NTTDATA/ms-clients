@@ -30,6 +30,11 @@ public class PersonClientController {
         return personClientResource.findAll();
     }
 
+    @GetMapping("/{id}")
+    public Mono<PersonClientDto> findById(@PathVariable String id){
+        return personClientResource.findById(id);
+    }
+
     @DeleteMapping
     public Mono<Void> delete(@RequestBody PersonClientDto personClientDto){
         return personClientResource.delete(personClientDto);

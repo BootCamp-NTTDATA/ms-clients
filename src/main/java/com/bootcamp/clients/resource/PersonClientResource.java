@@ -42,14 +42,11 @@ public class PersonClientResource extends MapperUtil {
                 });
     }
 
-
     public Mono<PersonClientDto> findById(String id){
         return iPersonClientService.findById(id)
                 .switchIfEmpty(Mono.error(new Exception()))
                 .map(x-> map(x,PersonClientDto.class));
     }
-
-
 
     public Mono<Void> delete(PersonClientDto personClientDto)
     {
@@ -57,7 +54,4 @@ public class PersonClientResource extends MapperUtil {
                 .switchIfEmpty(Mono.error(new Exception()))
                 .flatMap(x->iPersonClientService.deleteById(personClientDto.getId()));
     }
-
-
-
 }
