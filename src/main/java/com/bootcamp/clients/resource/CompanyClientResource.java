@@ -1,9 +1,7 @@
 package com.bootcamp.clients.resource;
 
 import com.bootcamp.clients.dto.CompanyClientDto;
-import com.bootcamp.clients.dto.PersonClientDto;
 import com.bootcamp.clients.entity.CompanyClient;
-import com.bootcamp.clients.entity.PersonClient;
 import com.bootcamp.clients.service.ICompanyClientService;
 
 import com.bootcamp.clients.util.MapperUtil;
@@ -17,6 +15,7 @@ import java.time.LocalDateTime;
 
 @Service
 public class CompanyClientResource extends MapperUtil{
+
     @Autowired
     private ICompanyClientService iCompanyClientService;
 
@@ -44,14 +43,11 @@ public class CompanyClientResource extends MapperUtil{
                 });
     }
 
-
     public Mono<CompanyClientDto> findById(String id){
         return iCompanyClientService.findById(id)
                 .switchIfEmpty(Mono.error(new Exception()))
                 .map(x-> map(x,CompanyClientDto.class));
     }
-
-
 
     public Mono<Void> delete(CompanyClientDto companyClientDto)
     {
@@ -59,5 +55,4 @@ public class CompanyClientResource extends MapperUtil{
                 .switchIfEmpty(Mono.error(new Exception()))
                 .flatMap(x-> iCompanyClientService.deleteById(companyClientDto.getId()));
     }
-
 }

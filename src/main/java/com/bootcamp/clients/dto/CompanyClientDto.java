@@ -9,11 +9,11 @@ import lombok.Setter;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CompanyClientDto {
     private String id;
-    private  String name;
+    private String numberDocument;
+    private String documentType;
+    private String name;
     private String address;
     private String phone;
     private String email;
-    private String ruc;
     private String tradeName;
-    private DocumentTypeDto documentType;
 }

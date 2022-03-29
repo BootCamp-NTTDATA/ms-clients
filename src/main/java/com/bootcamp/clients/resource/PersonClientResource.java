@@ -1,7 +1,6 @@
 package com.bootcamp.clients.resource;
 
 import com.bootcamp.clients.dto.PersonClientDto;
-import com.bootcamp.clients.entity.DocumentType;
 import com.bootcamp.clients.entity.PersonClient;
 import com.bootcamp.clients.service.IPersonClientService;
 import com.bootcamp.clients.util.MapperUtil;
@@ -43,14 +42,11 @@ public class PersonClientResource extends MapperUtil {
                 });
     }
 
-
     public Mono<PersonClientDto> findById(String id){
         return iPersonClientService.findById(id)
                 .switchIfEmpty(Mono.error(new Exception()))
                 .map(x-> map(x,PersonClientDto.class));
     }
-
-
 
     public Mono<Void> delete(PersonClientDto personClientDto)
     {
@@ -58,7 +54,4 @@ public class PersonClientResource extends MapperUtil {
                 .switchIfEmpty(Mono.error(new Exception()))
                 .flatMap(x->iPersonClientService.deleteById(personClientDto.getId()));
     }
-
-
-
 }
