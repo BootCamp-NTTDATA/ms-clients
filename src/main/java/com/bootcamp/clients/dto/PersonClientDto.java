@@ -17,4 +17,5 @@ public class PersonClientDto {
     private String phone;
     private String email;
     private String gender;
+    private String imei;
 }

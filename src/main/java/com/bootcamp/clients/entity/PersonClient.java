@@ -12,5 +12,5 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class PersonClient extends Person {
     private String lastName;
     private String gender;
-
+    private String imei;
 }
